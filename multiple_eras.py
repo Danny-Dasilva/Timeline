@@ -158,7 +158,7 @@ class Timeline:
         self.create_era_axis_labels()
 
         # create suberas and labels using axis height and overall height
-        print >>sys.stderr,"Allowing for",self.maxsuberas,"sub-eras"
+        print(f"{sys.stderr} Allowing for {self.maxsuberas} sub-eras")
         for i in range(1,self.maxsuberas+1):
             self.create_suberas((i+1)*y_era, y_axis, height-(i+1)*y_era, nsub=i)
             self.create_subera_axis_labels(nsub=i)
@@ -186,8 +186,8 @@ class Timeline:
         self.drawing['height'] = height
         ""
         self.drawing['height'] = int(self.drawing['width']*3/4.)  # ignore height
-        print >>sys.stderr, "Height:",self.drawing['height']
-        print >>sys.stderr, "width:",self.drawing['width']
+        print(f"{sys.stderr} Height: {self.drawing['height']}")
+        print(f"{sys.stderr} width: {self.drawing['width']}")
         ""
 
     def save(self, filename):
@@ -270,7 +270,7 @@ class Timeline:
         if nsub*'sub'+'eras' not in self.data:
             print >>sys.stderr, "No sub-eras',nsub,', no problem"
             return
-        print >>sys.stderr, "Got",nsub*'sub'+'eras'
+        print(f"{sys.stderr} Got {nsub} sub eras")
 
         # create eras
         eras_data = self.data[nsub*'sub'+'eras']
